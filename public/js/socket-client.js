@@ -29,5 +29,7 @@ sendButton.addEventListener('click', () => {
     date: new Date().toISOString()
   }
 
-  socket.emit('send-message', payload)
+  socket.emit('send-message', payload, (id) => {
+    console.log('From Server', id)
+  })
 })
