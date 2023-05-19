@@ -22,7 +22,7 @@ Do we already see the problem?
 If we had the same architecture as the ones in the image, both machines should be constantly making requests to see if there are new messages for them.
 
 <p align="center">
-  <img align="center" src="https://github.com/castromaciel/socket-fundamentals/assets/83432755/e5e0850c-6417-4438-a095-8dc7fd8aa2e1" width="75%" height="75%" />
+  <img align="center" src="https://github.com/castromaciel/socket-fundamentals/assets/83432755/f39e675f-ff5d-4cf5-9bcd-6c8b8e365edc" width="75%" height="75%" />
 </p>
 
 It would be interesting if the server could trigger a notification saying that there is new information that interests a particular user.
@@ -35,7 +35,7 @@ A socket allows us to maintain active active communication with the client machi
 That is, the server will be able to fire notifications to the client machine and it can interact with whatever the server responds to.
 
 <p align="center">
-  <img align="center" src="https://github.com/castromaciel/socket-fundamentals/assets/83432755/a7371b8c-c2ab-4dcf-8391-a1ddf75f917e" width="75%" height="75%" />
+  <img align="center" src="https://github.com/castromaciel/socket-fundamentals/assets/83432755/34e27499-a247-4e89-aeff-73b9012ec4d5" width="75%" height="75%" />
 </p>
 
 Usually we can send strings, booleans, numbers, or an entire object.
