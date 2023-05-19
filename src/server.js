@@ -14,6 +14,8 @@ class Server {
 
     this.middlewares()
     this.routes()
+
+    this.socketsEvents()
   }
 
   middlewares() {
@@ -26,6 +28,20 @@ class Server {
 
   routes() {
     // this.app.use(this.apiPaths.api, apiRoutes)
+  }
+
+  socketsEvents() {
+    this.io.on('connection', (socket) => {
+      console.log('---')
+      console.log('Client connected successfully')
+
+      socket.on('disconnect', () => {
+        console.log('Client disconnected')
+        console.log('---')
+      })
+
+      // socket.disconnect()
+    })
   }
 
   listen() {
