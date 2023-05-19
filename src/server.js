@@ -2,6 +2,7 @@ import cors from 'cors'
 import express from 'express'
 import { createServer } from 'http'
 import { Server as SocketServer } from 'socket.io'
+import { socketController } from './sockets/controller.js'
 
 class Server {
   constructor() {
@@ -31,20 +32,7 @@ class Server {
   }
 
   socketsEvents() {
-    this.io.on('connection', (socket) => {
-
-      socket.on('disconnect', () => {
-        // console.log('Client disconnected')
-      })
-
-      socket.on('send-message', (payload, callback) => {
-        const id = 123456789
-
-        callback({ id, date: new Date().toISOString() })
-        
-        // this.io.emit('send-message', payload)
-      })
-    })
+    this.io.on('connection', socketController)
   }
 
   listen() {
