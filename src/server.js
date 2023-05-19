@@ -32,15 +32,14 @@ class Server {
 
   socketsEvents() {
     this.io.on('connection', (socket) => {
-      console.log('---')
-      console.log('Client connected successfully')
 
       socket.on('disconnect', () => {
         console.log('Client disconnected')
-        console.log('---')
       })
 
-      // socket.disconnect()
+      socket.on('send-message', (payload) => {
+        this.io.emit('send-message', payload)
+      })
     })
   }
 
